@@ -1,0 +1,53 @@
+﻿body {
+    background-image: url('');
+    background-size: cover; /* Resmin ekran boyutuna sığmasını sağlar */
+    background-repeat: no-repeat; /* Resmin tekrarlanmasını engeller */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #555;
+
+}
+
+.resultcontainer {
+    width: 80%;
+    margin: 14.7% auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+    .resultcontainer h1 {
+        text-align: center;
+    }
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    button:hover {
+        background-color: #0056b3;
+    }

@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "Proje Yükleme";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+   
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/File.css" />
+    <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-storage.js" defer></script>
+</head>
+<body>
+    <div class="tempdata"><h3>@TempData["Username"]</h3></div>
+    <div class="Filecontainer">
+        <h1>@TempData["Username"]</h1>
+        <h2>Proje Yükleme</h2>
+        <form asp-controller="Home" asp-action="Upload" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="Title">Title:</label>
+                <input name="title" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label for="Student">Student:</label>
+                <input name="student" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label for="ProfessorDropdown">Counsellor Professor:</label>
+                <select id="ProfessorDropdown" name="professor" class="form-control" required>
+                    <option value="">
+                    
+                    </option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Description">Description:</label>
+                <textarea name="description" class="form-control" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="File">Dosya Yükle:</label>
+                <input name="file" class="form-control" type="file" required />
+            </div>
+            <button type="submit" class="btn btn-primary">Gönder</button>
+
+            <script>
+                // Form submit olayını dinleyerek doğrulama yapma
+                document.querySelector('form').addEventListener('submit', function (event) {
+                    // FormData nesnesi oluşturarak formdaki verileri al
+                    var formData = new FormData(this);
+                    var student = formData.get('student');
+                    var tempdataUsername = '@TempData["Username"]'; // TempData'daki Username değerini al
+
+                    // Kullanıcı adı ve öğrenci adını karşılaştır
+                    if (student !== tempdataUsername) {
+                        // Eğer kullanıcı adı ve öğrenci adı aynı değilse, formu gönderme
+                        event.preventDefault(); // Formun gönderilmesini engelle
+                        alert('Öğrenci adı ve kullanıcı adı eşleşmiyor! Dosya yükleme izni verilmedi.');
+                    }
+                    else {
+                        alert('Dosya başarıyla yüklendi!');
+                    }
+                });
+            </script>
+
+        </form>
+    </div>
+</body>
+</html>

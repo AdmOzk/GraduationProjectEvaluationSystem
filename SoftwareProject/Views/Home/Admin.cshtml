@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/index.css">
+</head>
+<body>
+
+    <div class="row1-container">
+        <div class="box box-down cyan">
+            <a href="@Url.Action("Results", "Home")" style="text-decoration: none; font-size: 24px; color: black; ">My Results</a>
+            <p>You can view your results on this page.</p>
+            <img src="https://assets.codepen.io/2301174/icon-supervisor.svg" alt="">
+        </div>
+
+        <div class="box red">
+            <a href="@Url.Action("Calendar", "Home")" style="text-decoration: none; font-size: 24px; color: black; ">Calendar</a>
+            <p>Professors can view their allocated Presentation times on this page.</p>
+            <img src="https://assets.codepen.io/2301174/icon-team-builder.svg" alt="">
+        </div>
+
+        <div class="box box-down blue">
+            <a href="@Url.Action("File", "Home")" style="text-decoration: none; font-size: 24px; color: black; ">Upload File</a>
+            <p>Students can upload their reports to the system from here.</p>
+            <img src="https://assets.codepen.io/2301174/icon-calculator.svg" alt="">
+        </div>
+    </div>
+    <div class="row2-container">
+        <div class="box orange">
+            <a href="@Url.Action("NecessaryDocument", "Home")" style="text-decoration: none; font-size: 24px; color: black; ">Necessary Documents</a>
+            <p>Students can view the required documents here.</p>
+            <img src="https://assets.codepen.io/2301174/icon-karma.svg" alt="">
+        </div>
+    </div>
+</body>
+</html>

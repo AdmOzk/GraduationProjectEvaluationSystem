@@ -1,0 +1,157 @@
+﻿@model IList<GraduationProject.Controllers.CalendarController.CalendarViewModel>
+
+@{
+    // Email'e göre gruplama
+    var groupedData = Model.SelectMany(calendar => calendar.BookedDates.Select(date => new
+    {
+        Email = date.professoremail,
+        Date = date.BookedDate.ToString("yyyy-MM-dd HH:mm"),
+        Title = calendar.Projects.Where(project => project.ProfessorEmail == date.professoremail && !string.IsNullOrWhiteSpace(project.Title)).Select(project => project.Title),
+        Description = calendar.Projects.Where(project => project.ProfessorEmail == date.professoremail && !string.IsNullOrWhiteSpace(project.Description)).Select(project => project.Description),
+        FirstName = calendar.Professors.FirstOrDefault(professor => professor.Email == date.professoremail)?.FirstName,
+        LastName = calendar.Professors.FirstOrDefault(professor => professor.Email == date.professoremail)?.LastName
+    })).GroupBy(data => data.Email);
+}
+
+<style>
+
+
+
+
+    .contpresentationcontainerainer {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .card {
+        flex: 1;
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: #f9f9f9;
+    }
+
+        .card h3, .card h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #333;
+            position: relative;
+        }
+
+            .card h3::after, .card h4::after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 2px;
+                background-color: #ddd;
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+            }
+
+        .card table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+            .card table th,
+            .card table td {
+                padding: 12px;
+                border: 1px solid #ddd;
+                text-align: left;
+            }
+
+            .card table th {
+                background-color: #f2f2f2;
+                font-weight: bold;
+            }
+
+            .card table tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+
+            .card table tr:hover {
+                background-color: #f1f1f1;
+            }
+</style>
+
+<body style="background-color: #555; ">
+
+<h1>Calendar Details</h1>
+
+<div class="presentationcontainer">
+    @foreach (var group in groupedData)
+    {
+        var hasTitleOrDescription = group.Any(g => g.Title.Any() || g.Description.Any());
+
+        if (hasTitleOrDescription)
+        {
+            <div class="card">
+                <h4>Presentation Details</h4>
+
+                @if (group.Any(g => g.Title.Any() || g.Description.Any()))
+                {
+                    <h3>Project</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in group)
+                            {
+                                @if (item.Title.Any() && item.Description.Any())
+                                {
+                                    <tr>
+                                        <td>@string.Join(", ", item.Title)</td>
+                                        <td>@string.Join(", ", item.Description)</td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                }
+
+                <h3>Professor</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>@group.First().FirstName</td>
+                            <td>@group.First().LastName</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Presentation Date</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in group)
+                        {
+                            <tr>
+                                <td>@item.Date</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    }
+</div>
+</body>

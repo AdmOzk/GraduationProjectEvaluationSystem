@@ -1,0 +1,74 @@
+﻿/* login.css */
+
+body {
+    background-image: url(/Photo/mezuniyet.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+/* Form elemanlarını düzenle */
+form {
+    max-width: 320px; /* Formun maksimum genişliğini ayarla */
+    margin: 0 auto; /* Formu dikey ve yatayda ortala */
+    text-align: center; /* İçeriği ortala */
+    margin-top: 18em;
+}
+
+    form > div {
+        margin-bottom: 20px; /* Form elemanları arasına boşluk bırak */
+    }
+
+.userform {
+    height: 20em;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    margin-left: 0.5em;
+    float: left;
+    font-family: Arial, sans-serif; /* Yazı tipini belirle */
+    font-size: 1em; /* Yazı kalınlığını belirle */
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 20px;
+    color: black;
+}
+
+    .input-container label {
+        position: absolute;
+        left: 0.5em;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .input-container input[type="text"],
+    .input-container input[type="password"] {
+        width: calc(100% - 10px); /* Input alanının genişliği, etiketten 10 piksel daha dar olacak şekilde ayarlanır */
+        padding: 10px;
+        padding-left: 120px; /* Sol boşluk, etiketin genişliği kadar olacak şekilde ayarlanır */
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #EEEEEE;
+    }
+
+
+button[type="submit"] {
+    width: 100%; /* Butonu formun genişliğine sığacak şekilde ayarla */
+    padding: 10px; /* Butonun dolgusunu artır */
+    border: none; /* Butonun kenarlığını kaldır */
+    border-radius: 4px; /* Butona köşe yuvarlama uygula */
+    background-color: #007bff; /* Butonun arka plan rengini ayarla */
+    color: #fff; /* Buton metninin rengini ayarla */
+    cursor: pointer; /* Fareyi üzerine geldiğinde el simgesi göster */
+}
+
+    button[type="submit"]:hover {
+        background-color: #0056b3; /* Butona fare geldiğinde arka plan rengini değiştir */
+    }

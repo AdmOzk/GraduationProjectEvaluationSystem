@@ -1,0 +1,23 @@
+﻿@model IList<GraduationProject.Models.MyBookedDates>
+
+<h2>Booked Dates</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Professor ID</th>
+            <th>Project ID</th>
+            <th>Booked Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var bookedDate in Model)
+        {
+                <tr>
+                    <td>@bookedDate.ProfessorId</td>
+                    <td>@bookedDate.ProjectId</td>
+                    <td>@bookedDate.BookedDate.ToShortDateString()</td>
+                </tr>
+        }
+    </tbody>
+</table>

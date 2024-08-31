@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Giriş";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" href="~/css/login.css" />
+</head>
+<body>
+
+    <div class="background-image">
+        <div class="userform">
+            <form method="post" asp-controller="Login" asp-action="Login" id="loginForm">
+                <div class="input-container">
+                    <label for="username">User</label>
+                    <input type="text" id="username" name="username" required />
+                </div>
+
+                <div class="input-container">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required />
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

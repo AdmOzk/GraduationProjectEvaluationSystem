@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Results";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+  
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/Results.css" />
+    <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-storage.js" defer></script>
+</head>
+<body>
+    <div class="tempdata">
+        <h3>@TempData["Username"]</h3>
+    </div>
+    
+    <div class="resultcontainer">
+        <h1>@TempData["Username"]</h1>
+        <h1>PROJECT RESULTS</h1>
+        <div class="result">
+            <h2>Total Grade to Percent:</h2>
+            <p>@ViewBag.TotalGrateToPercent</p>
+        </div>
+
+        <!-- Professor Information Section -->
+        <div class="professor-info">
+            <h2>Professor Information:</h2>
+            <p>Email: @ViewBag.ProfEm</p>
+            <!-- Assuming you also want to display the grade here -->
+        </div>
+
+        <div class="professor-info">
+            <h2>Professor Comment:</h2>
+            <p>Comment: @ViewBag.GenelYorum</p>
+            <!-- Assuming you also want to display the grade here -->
+        </div>
+
+    </div>
+</body>
+</html>

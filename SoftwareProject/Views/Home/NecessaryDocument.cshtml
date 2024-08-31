@@ -1,0 +1,108 @@
+﻿@{
+    ViewData["Title"] = "Necessary Documents";
+
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/NecessaryDocument.css">
+    <style>
+        .news-card__details-wrapper a {
+            margin-right: 10px; /* İki link arasındaki boşluk */
+        }
+        .news-card__details-wrapper a:last-child {
+            margin-right: 0; /* Son linkte boşluk olmaması için */
+        }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+
+        <div class="news-card">
+            <a href="#" class="news-card__card-link"></a>
+            <img src="~/Photo/kepatma.jpg" alt="" class="news-card__image">
+            <div class="news-card__text-wrapper">
+                <h2 class="news-card__title">Project stages</h2>
+                <div class="news-card__post-date">IKU - Evaluation project stages</div>
+                <div class="news-card__details-wrapper">
+                    <p class="news-card__excerpt">You can access the operational stages of the project from the link below and get detailed information.</p>
+                    <a href="@Url.Action("DownloadStages", "Home")" class="news-card__read-more">Download<i class="fas fa-long-arrow-alt-right"></i></a>
+                    <a href="https://bm.iku.edu.tr/tr/ogrenci/bitirme-projeleri" class="news-card__read-more" target="_blank">Read more</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <a href="#" class="news-card__card-link"></a>
+            <img src="~/Photo/diploma.jpg" alt="" class="news-card__image">
+            <div class="news-card__text-wrapper">
+                <h2 class="news-card__title">Project Report</h2>
+                <div class="news-card__post-date">IKU - Evaluation project report</div>
+                <div class="news-card__details-wrapper">
+                    <p class="news-card__excerpt">You can access the report writing rules and report files of the project from the link below and get detailed information.</p>
+                    <a href="@Url.Action("DownloadReport", "Home")" class="news-card__read-more">Downland<i class="fas fa-long-arrow-alt-right"></i></a>
+                    <a href="https://bm.iku.edu.tr/tr/ogrenci/bitirme-projeleri" class="news-card__read-more" target="_blank">Read more</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <a href="#" class="news-card__card-link"></a>
+            <img src="~/Photo/raporfoto.jpg" alt="" class="news-card__image">
+            <div class="news-card__text-wrapper">
+                <h2 class="news-card__title">IEEE Paper Format</h2>
+                <div class="news-card__post-date">IKU - Evaluation IEEE Paper Format</div>
+                <div class="news-card__details-wrapper">
+                    <p class="news-card__excerpt">You can access the IEEE Paper Format files of the project from the link below and get detailed information.</p>
+                    <a href="@Url.Action("DownloadIEEE", "Home")" class="news-card__read-more">Download<i class="fas fa-long-arrow-alt-right"></i></a>
+                    <a href="https://bm.iku.edu.tr/tr/ogrenci/bitirme-projeleri" class="news-card__read-more" target="_blank">Read more</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <a href="#" class="news-card__card-link"></a>
+            <img src="~/Photo/projectphtoto.jpg" alt="" class="news-card__image">
+            <div class="news-card__text-wrapper">
+                <h2 class="news-card__title">Project Poster</h2>
+                <div class="news-card__post-date">IKU - Evaluation Project Poster</div>
+                <div class="news-card__details-wrapper">
+                    <p class="news-card__excerpt">You can access the poster files of the project from the link below and get detailed information.</p>
+                    <a href="@Url.Action("DownloadPoster", "Home")" class="news-card__read-more">Download<i class="fas fa-long-arrow-alt-right"></i></a>
+                    <a href="https://bm.iku.edu.tr/tr/ogrenci/bitirme-projeleri" class="news-card__read-more" target="_blank">Read more</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <a href="#" class="news-card__card-link"></a>
+            <img src="~/Photo/mezuniyetkep.jpg" alt="" class="news-card__image">
+            <div class="news-card__text-wrapper">
+                <h2 class="news-card__title">To be observed</h2>
+                <div class="news-card__post-date">IKU - Evaluation Project To be observed</div>
+                <div class="news-card__details-wrapper">
+                    <p class="news-card__excerpt">You can access the project's audit files from the link below and get detailed information.</p>
+                    <a href="@Url.Action("DownloadObserved", "Home")" class="news-card__read-more">Download<i class="fas fa-long-arrow-alt-right"></i></a>
+                    <a href="https://bm.iku.edu.tr/tr/ogrenci/bitirme-projeleri" class="news-card__read-more" target="_blank">Read more</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <a href="#" class="news-card__card-link"></a>
+            <img src="~/Photo/sunumfoto.jpg" alt="" class="news-card__image">
+            <div class="news-card__text-wrapper">
+                <h2 class="news-card__title">Evaluation Criteria</h2>
+                <div class="news-card__post-date">IKU - Evaluation Criteria</div>
+                <div class="news-card__details-wrapper">
+                    <p class="news-card__excerpt">You can access the Project's Evaluation Criteria files from the link below and get detailed information.</p>
+                    <a href="@Url.Action("DownloadCriteria", "Home")" class="news-card__read-more">Download<i class="fas fa-long-arrow-alt-right"></i></a>
+                    <a href="https://bm.iku.edu.tr/tr/ogrenci/bitirme-projeleri" class="news-card__read-more" target="_blank">Read more</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
