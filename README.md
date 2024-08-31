@@ -51,5 +51,6 @@ This system facilitates seamless interaction between professors and students thr
 - **Role-Based Access Control:** The system employs role-based access control to restrict certain functionalities to specific users, enhancing security and ensuring proper use of the platform.
 
 ### Visit my Linkedin account to review demo.
+https://www.linkedin.com/in/adem-%C3%B6zkay%C4%B1t-945003238/
 
 
