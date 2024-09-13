@@ -50,6 +50,9 @@ This system facilitates seamless interaction between professors and students thr
 - **Data Integrity:** All data transferred between the web and mobile applications is encrypted, ensuring secure communication and data integrity.
 - **Role-Based Access Control:** The system employs role-based access control to restrict certain functionalities to specific users, enhancing security and ensuring proper use of the platform.
 
+Note: Due to restrictions such as sharing personal data, database connections and personal information such as student numbers, phone numbers, emails, etc. removed from the project. 
+It's unable to run this project I uploaded screen shuts from the application to LinkedIn.
+
 ### Visit my Linkedin account to review demo.
 https://www.linkedin.com/in/adem-%C3%B6zkay%C4%B1t-945003238/
 
