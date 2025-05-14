@@ -53,7 +53,7 @@ This system facilitates seamless interaction between professors and students thr
 Note: Due to restrictions such as sharing personal data, database connections and personal information such as student numbers, phone numbers, emails, etc. removed from the project. 
 It's unable to run this project I uploaded screen shuts from the application to LinkedIn.
 
-### Visit my Linkedin account to review demo.
-https://www.linkedin.com/in/adem-%C3%B6zkay%C4%B1t-945003238/
+### Visit my Linkedin account to review screenshots.
+[https://www.linkedin.com/in/adem-%C3%B6zkay%C4%B1t-945003238/](https://www.linkedin.com/in/adem-%C3%B6zkay%C4%B1t-945003238/overlay/projects/710832059/multiple-media-viewer/?profileId=ACoAADsW2YUBF-aMbYmljJrP4UUvdZk1D_bIv0s&treasuryMediaId=1725140203666)
 
 
